@@ -2,12 +2,12 @@ package team;
 
 import jsonModel.SportEvents;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Teams {
 
-    private Set<String> uniqueTeamNames = new HashSet<>();
+    private Set<String> uniqueTeamNames = new TreeSet<>();
     private SportEvents sportEvents;
 
     public Teams(SportEvents sportEvents) {
