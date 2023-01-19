@@ -25,13 +25,35 @@ public class JsonFile {
     }
 
     public void showMostProbableResult(int n){
-        for(int i =0; i<n;i++)
+
+        n = checkSizeParameter(n, sportEvents.getEventsList().size());
+
+        for(int i =0; i<n ;i++)
         {
-            System.out.println(sportEvents.getEventsList().get(i).getStart_date());
-            System.out.println(sportEvents.getEventsList().get(i).getCompetitors().get(0).getName());
-            System.out.println(sportEvents.getEventsList().get(i).getCompetitors().get(1).getName());
-            System.out.println(sportEvents.getEventsList().get(i).getVenue().getName());
+            System.out.println("Start date: " + refactorDate(sportEvents.getEventsList().get(i).getStart_date())+ ",");
+            System.out.println(sportEvents.getEventsList().get(i).getCompetitors().get(0).getName() + " (" +
+                                sportEvents.getEventsList().get(i).getCompetitors().get(0).getCountry() +  ") vs " +
+                                sportEvents.getEventsList().get(i).getCompetitors().get(1).getName() + " (" +
+                                sportEvents.getEventsList().get(i).getCompetitors().get(1).getCountry() + "),");
+            System.out.println("Venue: " + checkNull(i) + ",");
             System.out.println(findHighValue(i));
+        }
+    }
+
+    private String checkNull(int n){
+
+        if(sportEvents.getEventsList().get(n).getVenue() == null ) return "";
+        else return sportEvents.getEventsList().get(n).getVenue().getName();
+
+    }
+    private int checkSizeParameter(int parameter, int listSize){
+
+        if(parameter> listSize){
+            System.out.println("You enetered too large parameter, We do not have that many records. \n " +
+                    "We will display all records. ");
+            return listSize;
+        }else{
+            return parameter;
         }
     }
 
@@ -56,6 +78,14 @@ public class JsonFile {
                 value = Double.valueOf(sportEvents.getEventsList().get(i).getProbability_away_team_winner());
             }
         }
-        return "Highest probable result: " + result + " (" + value + ")\n";
+        return "Highest probable result: " + result + " (" + value.doubleValue() + ")\n";
+    }
+
+    private String refactorDate (String s){
+
+        s = s.replaceFirst("T", " ");
+        s = s.substring(0, 19);
+
+        return s;
     }
 }
