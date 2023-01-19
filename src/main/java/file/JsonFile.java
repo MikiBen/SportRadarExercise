@@ -2,6 +2,7 @@ package file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jsonModel.SportEvents;
+import team.Teams;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -18,6 +19,12 @@ public class JsonFile {
         ObjectMapper objectMapper = new ObjectMapper();
         sportEvents = objectMapper.readValue(new java.io.File("BE_data.json"), SportEvents.class);
         sortingCollection();
+    }
+
+    public void showUniqueTeamNames(){
+        Teams teams = new Teams(sportEvents);
+       teams.addUniqueTeamNames();
+       teams.showUniqueTeamNames();
     }
 
     private void sortingCollection(){

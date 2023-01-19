@@ -1,6 +1,8 @@
 package jsonModel;
 
-public class Competitors {    private String id;
+public class Competitors {
+
+    private String id;
     private String name;
     private String country;
     private String country_code;
