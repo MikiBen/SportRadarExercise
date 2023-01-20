@@ -1,10 +1,10 @@
-package other;
+package tools;
 
 import java.util.Scanner;
 
 public class ReadParameter {
 
-    public int readLine(){
+    public int readLine() {
         int value;
 
         Scanner scanner = new Scanner(System.in);
@@ -12,8 +12,7 @@ public class ReadParameter {
 
         try {
             value = Integer.parseInt(scanner.nextLine());
-        }
-        catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println(" This is not integer Value. ");
             value = readLine();
             return value;
