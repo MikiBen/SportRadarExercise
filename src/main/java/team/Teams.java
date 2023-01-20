@@ -22,6 +22,7 @@ public class Teams {
     }
 
     public void showUniqueTeamNames(){
+        System.out.println("Competitors names sorted in alphabetical order: ");
         for(String name:uniqueTeamNames){
             System.out.println(name);
         }

@@ -12,8 +12,7 @@ public class Main {
         ReadParameter readParameter = new ReadParameter();
 
         jsonFile.readFile();
-        //jsonFile.showMostProbableResult(readParameter.readLine());
+        jsonFile.showMostProbableResult(readParameter.readLine());
         jsonFile.showUniqueTeamNames();
-
     }
 }

@@ -15,7 +15,6 @@ public class JsonFile {
     }
 
     public void readFile() throws IOException {
-
         ObjectMapper objectMapper = new ObjectMapper();
         sportEvents = objectMapper.readValue(new java.io.File("BE_data.json"), SportEvents.class);
         sortingCollection();
@@ -23,8 +22,8 @@ public class JsonFile {
 
     public void showUniqueTeamNames(){
         Teams teams = new Teams(sportEvents);
-       teams.addUniqueTeamNames();
-       teams.showUniqueTeamNames();
+        teams.addUniqueTeamNames();
+        teams.showUniqueTeamNames();
     }
 
     private void sortingCollection(){
@@ -53,10 +52,11 @@ public class JsonFile {
         else return sportEvents.getEventsList().get(n).getVenue().getName();
 
     }
+
     private int checkSizeParameter(int parameter, int listSize){
 
         if(parameter> listSize){
-            System.out.println("You enetered too large parameter, We do not have that many records. \n " +
+            System.out.println("You entered too large parameter, We do not have that many records. \n " +
                     "We will display all records. ");
             return listSize;
         }else{
@@ -92,7 +92,7 @@ public class JsonFile {
 
         s = s.replaceFirst("T", " ");
         s = s.substring(0, 19);
-
         return s;
     }
+
 }

@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class ReadParameter {
 
     public int readLine(){
-        int value = 0;
+        int value;
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Write parameter: ");
+        System.out.println("Write parameter (How many record would you like to see?): ");
 
         try {
             value = Integer.parseInt(scanner.nextLine());
@@ -19,10 +19,7 @@ public class ReadParameter {
             return value;
         }
 
-        System.out.println(" value: " + value);
         return value;
     }
-
-
 
 }

@@ -14,9 +14,9 @@ public class Events implements Comparable<Events>{
     private String season_name;
     private List<Competitors> competitors;
     private Venue venue;
-    private int probability_home_team_winner;
-    private int probability_draw;
-    private int probability_away_team_winner;
+    private double probability_home_team_winner;
+    private double probability_draw;
+    private double probability_away_team_winner;
 
     public Events(String sport_event_id, String start_date, String sport_name, String competition_name, String competition_id, String season_name, List<Competitors> competitors, Venue venue, int probability_home_team_winner, int probability_draw, int probability_away_team_winner) {
         this.sport_event_id = sport_event_id;
@@ -67,15 +67,15 @@ public class Events implements Comparable<Events>{
         return venue;
     }
 
-    public int getProbability_home_team_winner() {
+    public double getProbability_home_team_winner() {
         return probability_home_team_winner;
     }
 
-    public int getProbability_draw() {
+    public double getProbability_draw() {
         return probability_draw;
     }
 
-    public int getProbability_away_team_winner() {
+    public double getProbability_away_team_winner() {
         return probability_away_team_winner;
     }
 
